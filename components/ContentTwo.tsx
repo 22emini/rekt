@@ -4,7 +4,7 @@ export default function RektMeme() {
          <div className=" bottom-0  -rotate-180 left-0 w-full h-20 z-1">
         <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1280 80">
           <path d="M0,40 Q80,10 160,40 T320,40 T480,40 T640,40 T800,40 T960,40 T1120,40 T1280,40 L1280,80 L0,80 Z" 
-                fill="#e3f2fd" 
+                fill="#fff" 
                 />
      
         </svg>
@@ -70,12 +70,7 @@ export default function RektMeme() {
       </div>
       
     </div>
-     <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1280 80">
-          
-          <path d="M0,50 Q100,20 200,50 T400,50 T600,50 T800,50 T1000,50 T1200,50 T1400,50 L1400,80 L0,80 Z" 
-                fill="#fff" 
-                />
-        </svg>
+    
     </div >
   );
 }

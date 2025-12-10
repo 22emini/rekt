@@ -6,13 +6,12 @@ const RektMemecoin = () => {
     <div className="min-h-screen bg-gradient-to-b from-[#360C62] via-purple-800 to-[#360C62] relative overflow-hidden">
       {/* Icicles at top */}
       <div className="absolute top-0 left-0 w-full h-20 z-10">
-         <div
-        className="absolute bottom-0  rotate-180 left-0 right-0 h-20"
+      <div 
+        className="absolute -top-6 left-0 w-full h-20 md:h-36 z-10"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 Q50,20 100,40 T200,40 L200,80 L0,80 Z' fill='white' opacity='0.95'/%3E%3C/svg%3E")`,
-          backgroundRepeat: "repeat-x",
-          backgroundSize: "200px auto",
-          backgroundPosition: "0 0",
+            backgroundImage: 'url(/images/snow.png)',
+            backgroundRepeat: 'repeat-x',
+            backgroundSize: 'auto 100%'
         }}
       />
       </div>

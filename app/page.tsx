@@ -13,6 +13,8 @@ const page = () => {
       <ContentOne />
 <ContentTwo />
 <ContentThree />
+
+
       <Footer />
     </div>
   )

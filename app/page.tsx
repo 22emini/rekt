@@ -4,6 +4,8 @@ import ContentThree from '@/components/ContentThree'
 import ContentTwo from '@/components/ContentTwo'
 import Footer from '@/components/Footer'
 import Home from '@/components/Header'
+import HowToBuy from '@/components/HowToBuy'
+import Contact from '@/components/Contact'
 import React from 'react'
 
 const page = () => {
@@ -11,10 +13,10 @@ const page = () => {
     <div>
       <Home/>
       <ContentOne />
-<ContentTwo />
-<ContentThree />
-
-
+      <ContentTwo />
+      <ContentThree />
+      <HowToBuy />
+      <Contact />
       <Footer />
     </div>
   )

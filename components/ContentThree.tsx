@@ -3,10 +3,10 @@ import Image from 'next/image';
 
 const ContentThree = () => {
   return (
-    <div className="relative w-full min-h-screen bg-[#360C62] flex flex-col items-center">
+    <div id="tokenomics" className="relative w-full min-h-screen bg-[#360C62] flex flex-col items-center py-20 overflow-hidden">
       {/* Snow Drip Top */}
       <div 
-        className="absolute -top-6 left-0 w-full h-20 md:h-36 z-10"
+        className="absolute -top-4 left-0 w-full h-32 md:h-48 lg:h-56 z-10"
         style={{
             backgroundImage: 'url(/images/snow.png)',
             backgroundRepeat: 'repeat-x',
@@ -15,101 +15,90 @@ const ContentThree = () => {
       />
 
       {/* Paw Prints - Decor */}
-      <div className="absolute top-24 left-10 md:left-20 animate-pulse hidden md:block">
+      <div className="absolute top-32 left-10 md:left-20 hidden md:block opacity-30">
         <Image 
             src="/images/pawpad.png" 
             alt="Paw" 
-            width={200} 
-            height={200} 
-            className="-rotate-12 opacity-90 drop-shadow-lg"
+            width={150} 
+            height={150} 
+            className="-rotate-12"
         />
       </div>
-      <div className="absolute top-24 right-10 md:right-20 animate-pulse hidden md:block delay-700">
+      <div className="absolute top-32 right-10 md:right-20 hidden md:block opacity-30">
          <Image 
          src="/images/pawpad.png" 
             alt="Paw" 
-            width={200} 
-            height={200} 
-            className="rotate-12 opacity-90 drop-shadow-lg"
+            width={150} 
+            height={150} 
+            className="rotate-12"
         />
       </div>
 
       {/* Header */}
-      <div className="relative z-20 text-center mt-16 mb-16">
+      <div className="relative z-20 text-center mt-20 md:mt-28 mb-12">
         
-        <h1 className="text-7xl md:text-8xl font-black text-white text-center mb-6 tracking-wider uppercase"
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white text-center mb-4 tracking-wider uppercase"
                   style={{
                     fontFamily: "'Jumps Winter', sans-serif",
                     textShadow: '4px 4px 0 #6A1B9A, -2px -2px 0 #6A1B9A'
                   }}>
                REKTNOMICS
               </h1>
-        <p className="text-white text-lg md:text-xl font-normal tracking-wide uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
+        <p className="text-white text-base md:text-lg font-normal tracking-wide uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
             TOTAL SUPPLY: 420,690,000,000 $REKT
         </p>
       </div>
 
-      {/* Signs Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-16 max-w-7xl w-full z-20 place-items-center">
-        
-        {/* Sign 1 */}
-        <SignPost 
-            percentage="90%" 
-            title="LIQUIDITY POOL" 
-            description="Burned forever. No rugs." 
-        />
-
-        {/* Sign 2 - Offset usually in design, but grid is fine */}
-        <div className="md:mt-24">
-            <SignPost 
-                percentage="7%" 
-                title="MARKETING" 
-                description="Memes, raids, and chaos." 
-            />
+      {/* Signs Layout - Staggered */}
+      <div className="relative z-20 max-w-6xl w-full px-4 md:px-8">
+        {/* Row 1: Sign 1 (left) */}
+        <div className="flex justify-start mb-8 lg:mb-0">
+          <div className="w-full md:w-1/2 lg:w-2/5">
+            <div className="relative hover:scale-105 transition-transform duration-300">
+              <Image 
+                src="/images/rekttokenomic1.png" 
+                alt="90% Liquidity Pool" 
+                width={450}
+                height={450}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Sign 3 */}
-        <SignPost 
-            percentage="3%" 
-            title="TEAM" 
-            description="Ramen budget." 
-        />
+        {/* Row 2: Sign 2 (right, offset) */}
+        <div className="flex justify-end mb-8 lg:mb-0 lg:-mt-20">
+          <div className="w-full md:w-1/2 lg:w-2/5">
+            <div className="relative hover:scale-105 transition-transform duration-300">
+              <Image 
+                src="/images/rekttokenomics2.svg" 
+                alt="7% Marketing" 
+                width={450}
+                height={450}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
 
+        {/* Row 3: Sign 3 (center) */}
+        <div className="flex justify-center lg:-mt-16">
+          <div className="w-full md:w-1/2 lg:w-2/5">
+            <div className="relative hover:scale-105 transition-transform duration-300">
+              <Image 
+                src="/images/rektokenomics3.svg" 
+                alt="3% Team" 
+                width={450}
+                height={450}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   );
 };
-
-const SignPost = ({ percentage, title, description }: { percentage: string, title: string, description: string }) => {
-    return (
-        <div className="relative w-[550px] max-w-[95vw] h-[430px] md:w-[700px] md:max-w-full md:h-[520px] flex items-center justify-center hover:scale-105 transition-transform duration-300">
-             {/* Sign Background Image */}
-             <div className="absolute inset-0 w-full h-full">
-                <Image 
-                    src="/images/sign.png" 
-                    alt="Wooden Sign" 
-                    fill
-                    className="object-contain" // Use contain to see whole sign
-                />
-             </div>
-             
-             {/* Text Content - Absolute positioned to fit on the wood part */}
-             {/* Adjust top padding to clear the snow cap on the sign */}
-             <div className="relative z-10 pt-10 px-6 text-center w-[80%]">
-                <div className="flex items-center justify-center gap-2 mb-3">
-                     <span className="text-3xl md:text-4xl font-black text-[#8A38F5] drop-shadow-md uppercase" style={{
-                    fontFamily: "'Jumps Winter', sans-serif",
-                    textShadow: '2px 2px 0 #4A148C, -1px -1px 0 #4A148C'
-                  }}>
-                        {percentage} - {title}
-                     </span>
-                </div>
-                <p className="text-white text-lg md:text-xl font-normal" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
-                    {description}
-                </p>
-             </div>
-        </div>
-    )
-}
 
 export default ContentThree;

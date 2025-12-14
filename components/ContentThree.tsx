@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const ContentThree = () => {
   return (
-    <div className="relative w-full min-h-screen bg-[#2a0a55]  flex flex-col items-center">
+    <div className="relative w-full min-h-screen bg-[#360C62] flex flex-col items-center">
       {/* Snow Drip Top */}
       <div 
         className="absolute -top-6 left-0 w-full h-20 md:h-36 z-10"
@@ -35,16 +35,17 @@ const ContentThree = () => {
       </div>
 
       {/* Header */}
-      <div className="relative z-20 text-center mt-12 mb-16">
+      <div className="relative z-20 text-center mt-16 mb-16">
         
-        <h1 className="text-7xl font-black text-white text-center mb-8 tracking-wider"
+        <h1 className="text-7xl md:text-8xl font-black text-white text-center mb-6 tracking-wider uppercase"
                   style={{
-                    textShadow: '-3px -3px 0 #7b1fa2, 3px -3px 0 #7b1fa2, -3px 3px 0 #7b1fa2, 3px 3px 0 #7b1fa2, 0 6px 20px rgba(0,0,0,0.5)'
+                    fontFamily: "'Jumps Winter', sans-serif",
+                    textShadow: '4px 4px 0 #6A1B9A, -2px -2px 0 #6A1B9A'
                   }}>
                REKTNOMICS
               </h1>
-        <p className="text-white/90 text-sm md:text-lg font-bold tracking-widest uppercase">
-            Total Supply: 420,690,000,000 $REKT
+        <p className="text-white text-lg md:text-xl font-normal tracking-wide uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
+            TOTAL SUPPLY: 420,690,000,000 $REKT
         </p>
       </div>
 
@@ -95,14 +96,15 @@ const SignPost = ({ percentage, title, description }: { percentage: string, titl
              {/* Text Content - Absolute positioned to fit on the wood part */}
              {/* Adjust top padding to clear the snow cap on the sign */}
              <div className="relative z-10 pt-10 px-6 text-center w-[80%]">
-                <div className="flex items-center justify-center gap-2 mb-1">
-                     <span className="text-2xl md:text-3xl font-black text-white drop-shadow-md stroke-black [text-shadow:2px_2px_0px_#4a192c]" style={{
-                    textShadow: '-3px -3px 0 #7b1fa2, 3px -3px 0 #7b1fa2, -3px 3px 0 #7b1fa2, 3px 3px 0 #7b1fa2, 0 6px 20px rgba(0,0,0,0.5)'
+                <div className="flex items-center justify-center gap-2 mb-3">
+                     <span className="text-3xl md:text-4xl font-black text-[#8A38F5] drop-shadow-md uppercase" style={{
+                    fontFamily: "'Jumps Winter', sans-serif",
+                    textShadow: '2px 2px 0 #4A148C, -1px -1px 0 #4A148C'
                   }}>
                         {percentage} - {title}
                      </span>
                 </div>
-                <p className="text-white text-base md:text-lg font-bold drop-shadow-sm">
+                <p className="text-white text-lg md:text-xl font-normal" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
                     {description}
                 </p>
              </div>

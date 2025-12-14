@@ -4,15 +4,17 @@ import { Send } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div className="relative w-full min-h-[80vh] bg-[#8A38F5] flex flex-col items-center justify-between py-16 px-8 overflow-hidden">
+    <div className="relative w-full min-h-[80vh] flex flex-col items-center justify-between py-16 px-8 overflow-hidden" style={{
+      background: 'linear-gradient(to bottom, #8A38F5 0%, #8A38F5 50%, #51218F 100%)'
+    }}>
       {/* Decorative confetti/shapes */}
-      <div className="absolute top-16 left-8 w-4 h-8 bg-[#7CB342] rounded-lg transform rotate-45 opacity-70"></div>
-      <div className="absolute top-32 left-16 w-3 h-6 bg-[#7CB342] rounded-lg transform -rotate-12 opacity-60"></div>
-      <div className="absolute top-24 left-28 w-2 h-5 bg-[#7CB342] rounded-lg transform rotate-90 opacity-50"></div>
-      <div className="absolute top-20 right-1/3 w-3 h-6 bg-[#7CB342] rounded-lg transform rotate-45 opacity-60"></div>
-      <div className="absolute top-40 right-1/4 w-4 h-8 bg-[#7CB342] rounded-lg transform -rotate-12 opacity-70"></div>
-      <div className="absolute bottom-1/3 left-1/4 w-3 h-6 bg-[#7CB342] rounded-lg transform rotate-12 opacity-50"></div>
-      <div className="absolute top-1/2 right-32 w-3 h-6 bg-[#7CB342] rounded-lg transform -rotate-45 opacity-60"></div>
+      <div className="confetti absolute top-16 left-8 w-4 h-8 bg-[#7CB342] rounded-lg transform rotate-45 opacity-70"></div>
+      <div className="confetti absolute top-32 left-16 w-3 h-6 bg-[#7CB342] rounded-lg transform -rotate-12 opacity-60"></div>
+      <div className="confetti absolute top-24 left-28 w-2 h-5 bg-[#7CB342] rounded-lg transform rotate-90 opacity-50"></div>
+      <div className="confetti absolute top-20 right-1/3 w-3 h-6 bg-[#7CB342] rounded-lg transform rotate-45 opacity-60"></div>
+      <div className="confetti absolute top-40 right-1/4 w-4 h-8 bg-[#7CB342] rounded-lg transform -rotate-12 opacity-70"></div>
+      <div className="confetti absolute bottom-1/3 left-1/4 w-3 h-6 bg-[#7CB342] rounded-lg transform rotate-12 opacity-50"></div>
+      <div className="confetti absolute top-1/2 right-32 w-3 h-6 bg-[#7CB342] rounded-lg transform -rotate-45 opacity-60"></div>
 
       {/* White drip/splash on left side */}
       <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24">
@@ -41,8 +43,8 @@ const Contact = () => {
         <div className="flex-1 flex justify-center lg:justify-start">
           <div className="relative">
             <Image 
-              src="/image/rac2.png" 
-              alt="Happy Raccoon" 
+              src="/images/happyratel.svg" 
+              alt="Happy Ratel" 
               width={450} 
               height={450} 
               className="w-64 md:w-80 lg:w-96 h-auto drop-shadow-2xl"
@@ -53,7 +55,7 @@ const Contact = () => {
         {/* Right Side - Contact Info */}
         <div className="flex-1 flex flex-col items-center">
           {/* "CONTACT" Heading */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 uppercase"
+          <h1 className="text-7xl md:text-7xl lg:text-8xl font-black text-white mb-8 uppercase"
                   style={{
                     fontFamily: "'Jumps Winter', sans-serif",
                     textShadow: '4px 4px 0 #6A1B9A, -2px -2px 0 #6A1B9A'

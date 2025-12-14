@@ -2,10 +2,20 @@
 
 import { Copy, Send, Check } from "lucide-react"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
   const [copied, setCopied] = useState(false)
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const descRef = useRef<HTMLParagraphElement>(null)
+  const buttonsRef = useRef<HTMLDivElement>(null)
+  const raccoonRef = useRef<HTMLDivElement>(null)
+  const socialRef = useRef<HTMLDivElement>(null)
+  const navRef = useRef<HTMLElement>(null)
 
   const handleCopyAddress = async () => {
     const address = "0XREKT00000000000000DEEGENSURVIV0RS420690"
@@ -48,6 +58,79 @@ export default function Home() {
     return () => document.removeEventListener('click', handleSmoothScroll)
   }, [])
 
+  // GSAP Animations
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Navbar animation - slide down from top
+      if (navRef.current) {
+        gsap.from(navRef.current, {
+          y: -100,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out"
+        })
+      }
+
+      // Title animation - simple fade in
+      if (titleRef.current) {
+        gsap.from(titleRef.current, {
+          opacity: 0,
+          y: 30,
+          duration: 1,
+          ease: "power2.out",
+          delay: 0.3
+        })
+      }
+
+      // Description fade in
+      if (descRef.current) {
+        gsap.from(descRef.current, {
+          opacity: 0,
+          duration: 1,
+          delay: 0.6,
+          ease: "power2.out"
+        })
+      }
+
+      // Raccoon simple fade in
+      if (raccoonRef.current) {
+        gsap.from(raccoonRef.current, {
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+          delay: 0.5
+        })
+      }
+
+      // Social icons simple fade in
+      if (socialRef.current) {
+        const socialIcons = socialRef.current.querySelectorAll('a')
+        gsap.from(socialIcons, {
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out",
+          delay: 0.8
+        })
+      }
+
+      // Paw prints only blink
+      const paws = document.querySelectorAll('.paw-print')
+      paws.forEach((paw, index) => {
+        gsap.to(paw, {
+          opacity: 0.05,
+          duration: 2,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+          delay: index * 0.3
+        })
+      })
+    })
+
+    return () => ctx.revert()
+  }, [])
+
   return (
     <div id="home" className="min-h-screen bg-gradient-to-b from-[#360C62] via-purple-800 to-[#360C62] overflow-hidden">
       {/* Paw print background pattern */}
@@ -55,7 +138,7 @@ export default function Home() {
       <PawPrintBackground />
 
       {/* Navigation Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4">
+      <header ref={navRef} className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Logo on the left */}
           <div className="flex-shrink-0">
@@ -91,6 +174,7 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-8 pt-32 pb-20 flex items-center justify-between min-h-screen relative">
         <div className="flex-1 z-10">
           <h1
+            ref={titleRef}
             className="text-8xl md:text-9xl font-black text-white mb-8 tracking-tighter"
             style={{
               fontFamily: "'Jumps Winter', sans-serif",
@@ -102,17 +186,17 @@ export default function Home() {
           </h1>
 
           {/* Description */}
-          <p className="text-base text-white mb-8 max-w-md leading-relaxed font-medium" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
+          <p ref={descRef} className="text-base text-white mb-8 max-w-md leading-relaxed font-medium" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
             From the ashes of rugs and liquidations rises $REKT the memecoin that turns your losses into memes and your
             memes into gains.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex gap-4 mb-12">
-            <button className="px-8 py-3 rotate-3 bg-[#8A38F5] border-2 border-white rounded-full text-white font-bold text-sm tracking-wider hover:bg-white hover:text-purple-900 transition uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
+          <div ref={buttonsRef} className="flex gap-4 mb-12">
+            <button className="px-8 py-3 rotate-3 bg-[#6C2298] border-2 border-white rounded-full text-white font-bold text-sm tracking-wider hover:bg-white hover:text-purple-900 transition uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
               BUY REKT
             </button>
-            <button className="px-8 py-3 -rotate-3 bg-[#7CB342] text-white font-bold text-sm tracking-wider rounded-full hover:bg-[#689F38] transition uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
+            <button className="px-8 py-3 -rotate-3 bg-[#4A9A20] text-white font-bold text-sm tracking-wider rounded-full hover:bg-[#689F38] transition uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
               WHITEPAPER
             </button>
           </div>
@@ -121,7 +205,7 @@ export default function Home() {
           <div className="flex flex-col gap-2">
             <p className="text-white text-sm font-semibold" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>Contact Address:</p>
             <div className="flex items-center gap-3">
-              <div className="bg-[#7CB342] rounded-full px-6 py-3 text-white font-bold text-xs tracking-wider uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
+              <div className="bg-[#4A9A20] rounded-full px-6 py-3 text-white font-bold text-xs tracking-wider uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
                 0XREKT00000000000000DEEGENSURVIV0RS420690
               </div>
               <button
@@ -140,14 +224,14 @@ export default function Home() {
         </div>
 
         {/* Right-side Image Placeholder (visible on md+ screens) */}
-        <div className="hidden md:flex flex-1 justify-end items-center z-10 pr-24 lg:pr-32">
+        <div ref={raccoonRef} className="hidden md:flex flex-1 justify-end items-center z-10 pr-24 lg:pr-32">
  
            <Image  src="/image/rac1.png" alt="Dog" width={400} height={600} className="rounded-3xl"/>
         
         </div>
 
         {/* Social Icons & "ONLY ON BASE" - Absolute positioned within hero only */}
-        <div className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-20 flex flex-col items-center gap-6">
+        <div ref={socialRef} className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-20 flex flex-col items-center gap-6">
           {/* Social Icons */}
           <div className="flex flex-col gap-5">
             {/* Telegram */}
@@ -209,7 +293,7 @@ function PawPrintBackground() {
           alt="paw"
           width={paw.size}
           height={paw.size}
-          className="absolute"
+          className="absolute paw-print"
           style={{
             left: `${paw.left}%`,
             top: `${paw.top}%`,

@@ -160,16 +160,16 @@ const ContentThree = () => {
       </div>
 
       {/* Header */}
-      <div className="relative z-20 text-center mt-20 md:mt-28 mb-12">
+      <div className="relative z-20 text-center mt-16 md:mt-20 lg:mt-28 mb-8 md:mb-12 px-4">
         
-        <h1 ref={titleRef} className="text-5xl md:text-7xl lg:text-8xl font-black text-white text-center mb-4 tracking-wider uppercase"
+        <h1 ref={titleRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black text-white text-center mb-3 md:mb-4 tracking-wider uppercase"
                   style={{
                     fontFamily: "'Jumps Winter', sans-serif",
                     textShadow: '4px 4px 0 #6A1B9A, -2px -2px 0 #6A1B9A'
                   }}>
                REKTNOMICS
               </h1>
-        <p ref={supplyRef} className="text-white text-base md:text-lg font-normal tracking-wide uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
+        <p ref={supplyRef} className="text-white text-sm sm:text-base md:text-lg font-normal tracking-wide uppercase" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
             TOTAL SUPPLY: 420,690,000,000 $REKT
         </p>
       </div>
@@ -177,8 +177,8 @@ const ContentThree = () => {
       {/* Signs Layout - Staggered */}
       <div className="relative z-20 max-w-6xl w-full px-4 md:px-8">
         {/* Row 1: Sign 1 (left) */}
-        <div className="flex justify-start mb-4 lg:mb-0">
-          <div className="w-full md:w-3/5 lg:w-1/2">
+        <div className="flex justify-center md:justify-start mb-4 lg:mb-0">
+          <div className="w-4/5 sm:w-3/4 md:w-3/5 lg:w-1/2">
             <div ref={sign1Ref} className="relative hover:scale-105 transition-transform duration-300">
               <Image 
                 src="/images/rekttokenomic1.png" 
@@ -192,8 +192,8 @@ const ContentThree = () => {
         </div>
 
         {/* Row 2: Sign 2 (right, offset) */}
-        <div className="flex justify-end mb-4 lg:mb-0 lg:-mt-12">
-          <div className="w-full md:w-3/5 lg:w-1/2">
+        <div className="flex justify-center md:justify-end mb-4 lg:mb-0 lg:-mt-12">
+          <div className="w-4/5 sm:w-3/4 md:w-3/5 lg:w-1/2">
             <div ref={sign2Ref} className="relative hover:scale-105 transition-transform duration-300">
               <Image 
                 src="/images/rekttokenomics2.svg" 
@@ -208,7 +208,7 @@ const ContentThree = () => {
 
         {/* Row 3: Sign 3 (center) */}
         <div className="flex justify-center lg:-mt-10">
-          <div className="w-full md:w-3/5 lg:w-1/2">
+          <div className="w-4/5 sm:w-3/4 md:w-3/5 lg:w-1/2">
             <div ref={sign3Ref} className="relative hover:scale-105 transition-transform duration-300">
               <Image 
                 src="/images/rektokenomics3.svg" 

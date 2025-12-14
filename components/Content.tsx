@@ -80,7 +80,7 @@ const RektMemecoin = () => {
   }, []);
 
   return (
-    <div id="about" className="min-h-screen bg-[#360C62] relative overflow-visible pb-0">
+    <div id="about" className="min-h-screen bg-[#360C62] relative overflow-hidden pb-20 md:pb-32">
       {/* Icicles at top */}
       <div 
         className="absolute -top-4 left-0 pb-5 w-full h-32 md:h-48 lg:h-56 z-10"
@@ -92,18 +92,18 @@ const RektMemecoin = () => {
       />
 
       {/* Main content */}
-      <div className="max-w-7xl mx-auto px-8 pt-40 md:pt-48 lg:pt-56 pb-0 relative z-5">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-32 md:pt-40 lg:pt-48 xl:pt-56 pb-0 relative z-5">
+        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
           {/* Raccoon Mascot */}
-          <div ref={raccoonRef} className="shrink-0 w-80 lg:w-96">
+          <div ref={raccoonRef} className="shrink-0 w-48 sm:w-64 md:w-72 lg:w-80 xl:w-96">
             <Image src="/image/rac2.png" alt="Raccoon Mascot" width={400} height={500} className="w-full h-auto" />
           </div>
 
           {/* About Box with Zigzag Background */}
-          <div className="flex-1 relative">
+          <div className="flex-1 relative w-full">
             <div 
               ref={aboutBoxRef}
-              className=" p-14 md:p-12 relative shadow-2xl"
+              className="p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 relative shadow-2xl"
               style={{
                 backgroundImage: 'url(/images/purplezigzagbg.svg)',
                 backgroundSize: 'cover',
@@ -111,12 +111,12 @@ const RektMemecoin = () => {
               }}
             >
               {/* Decorative line top right */}
-              <div ref={decorLineTopRef} className="absolute top-6 right-8 w-20 h-4 -rotate-12 bg-white rounded-full"></div>
+              <div ref={decorLineTopRef} className="absolute top-4 right-4 md:top-6 md:right-8 w-12 md:w-20 h-3 md:h-4 -rotate-12 bg-white rounded-full"></div>
               
               {/* Decorative line bottom left */}
-              <div ref={decorLineBottomRef} className="absolute bottom-6 left-8 w-28 h-5 rotate-12 bg-[#7CB342] rounded-full"></div>
+              <div ref={decorLineBottomRef} className="absolute bottom-4 left-4 md:bottom-6 md:left-8 w-16 md:w-28 h-3 md:h-5 rotate-12 bg-[#7CB342] rounded-full"></div>
 
-              <h1 ref={titleRef} className="text-5xl md:text-7xl font-black text-white text-center mb-8 tracking-wider uppercase"
+              <h1 ref={titleRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white text-center mb-6 md:mb-8 tracking-wider uppercase"
                   style={{
                     fontFamily: "'Jumps Winter', sans-serif",
                     textShadow: '3px 3px 0 #6A1B9A, -1px -1px 0 #6A1B9A'
@@ -124,7 +124,7 @@ const RektMemecoin = () => {
                 ABOUT
               </h1>
 
-              <p ref={textRef} className="text-white text-base md:text-lg leading-relaxed text-center font-normal"
+              <p ref={textRef} className="text-white text-sm sm:text-base md:text-lg leading-relaxed text-center font-normal"
                  style={{fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif"}}>
                 $REKT is the memecoin for everyone who's been wrecked by the market and lived to tell the tale. Built by degens who've lost it all and came back stronger. Our mascot is a raccoon because raccoons are survivors. They thrive in chaos, adapt to anything, and always find a way through. Got liquidated? Rugged? Down bad? You're not alone. $REKT is where survivors gather, laugh at the pain, and ride the next wave together. This isn't about lambos and moons. It's about real traders, real losses, and real resilience.
               </p>

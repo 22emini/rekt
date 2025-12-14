@@ -67,8 +67,8 @@ const HowToBuy = () => {
       />
 
       {/* Header */}
-      <div className="relative z-20 text-center mt-20 md:mt-24 mb-16">
-        <h1 ref={titleRef} className="text-4xl md:text-5xl font-black text-white text-center tracking-wider uppercase"
+      <div className="relative z-20 text-center mt-12 md:mt-20 lg:mt-24 mb-12 md:mb-16 px-4">
+        <h1 ref={titleRef} className="text-3xl sm:text-4xl md:text-5xl font-black text-white text-center tracking-wider uppercase"
                   style={{
                     fontFamily: "'Jumps Winter', sans-serif",
                     textShadow: '4px 4px 0 #6A1B9A, -2px -2px 0 #6A1B9A'

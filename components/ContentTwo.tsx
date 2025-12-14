@@ -63,19 +63,19 @@ export default function RektMeme() {
   return (
     <div
       id="story"
-      className="min-h-screen flex items-center justify-center px-4 pt-32 pb-32 -mt-2 relative z-10"
+      className="min-h-screen flex items-center justify-center px-4 md:px-6 lg:px-8 py-16 md:py-24 lg:py-32 -mt-2 relative z-10"
       style={{
         backgroundColor: '#360C62',
         backgroundImage: 'url(/images/whoisbg.svg)',
-        backgroundSize: '100% 100%',
-        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="relative max-w-5xl w-full px-4">
+      <div className="relative max-w-5xl w-full px-4 sm:px-6 md:px-8">
         {/* Content box */}
-        <div className="relative">
-          <div className="text-center space-y-8">
+        <div className="relative p-6 md:p-8 lg:p-12">
+          <div className="text-center space-y-6 md:space-y-8">
             {/* Title */}
             <h1 ref={titleRef} className="text-5xl md:text-7xl font-black text-white mb-12 uppercase drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)]" style={{
               fontFamily: "'Jumps Winter', sans-serif",
@@ -86,7 +86,7 @@ export default function RektMeme() {
             </h1>
 
             {/* Body text */}
-            <div ref={paragraphsRef} className="text-white text-xl md:text-2xl leading-relaxed space-y-8 font-medium" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
+            <div ref={paragraphsRef} className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed space-y-4 md:space-y-6 lg:space-y-8 font-medium" style={{ fontFamily: "'Free Sans', 'Liberation Sans', Arial, sans-serif" }}>
               <p>
                 Once upon a degen dream, a raccoon aped into every shitcoin imaginable. Luna at $119? Bought it. SafeMoon? Bag holder. FTX tokens? Still has 'em. He got liquidated 47 times. Rugged 23 times. His portfolio looked like a graveyard.
               </p>
@@ -103,8 +103,8 @@ export default function RektMeme() {
                 No roadmap. No promises. Just vibes and survival.
               </p>
 
-              <div className="mt-8">
-                <span ref={taglineRef} className="font-bold text-2xl md:text-3xl block">$REKT: Because we've all been there.</span>
+              <div className="mt-6 md:mt-8">
+                <span ref={taglineRef} className="font-bold text-xl sm:text-2xl md:text-3xl block">$REKT: Because we've all been there.</span>
               </div>
             </div>
           </div>
